@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic_battle", "Magic_battle\Magic_battle.csproj", "{86F4551E-75DF-4EE1-8CC9-AB601D1C2658}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86F4551E-75DF-4EE1-8CC9-AB601D1C2658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F4551E-75DF-4EE1-8CC9-AB601D1C2658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F4551E-75DF-4EE1-8CC9-AB601D1C2658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F4551E-75DF-4EE1-8CC9-AB601D1C2658}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEC1199A-5A8D-4CF7-9C13-00A2316AC09F}
+	EndGlobalSection
+EndGlobal
