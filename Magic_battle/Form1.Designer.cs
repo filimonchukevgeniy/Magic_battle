@@ -102,6 +102,7 @@ namespace Magic_battle
             this.research_button.TabIndex = 4;
             this.research_button.Text = "research";
             this.research_button.UseVisualStyleBackColor = false;
+            this.research_button.Click += new System.EventHandler(this.research_button_Click);
             // 
             // Form1
             // 

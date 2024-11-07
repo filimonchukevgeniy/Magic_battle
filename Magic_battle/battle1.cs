@@ -50,16 +50,16 @@ namespace Magic_battle
             hero_fraction = GlobalVariables.hero_fraction_global;
             ////////////////////////////////////////////////////////////////////
             /// створення головного персонажу і заповнення його статистики
-            var hero = GlobalVariables.property[hero_fraction];
-            hero_hp = hero.fraction_Hp_;
-            hero_physical_dmg = hero.fraction_Ph_Dmg;
-            hero_magic_dmg = hero.fraction_Magic_Dmg;
-            hero_hp_result_label.Text = hero.fraction_Hp_.ToString();
-            hero_ph_dmg_result_label.Text = hero.fraction_Ph_Dmg.ToString();
-            hero_magic_dmg_result_label.Text = hero.fraction_Magic_Dmg.ToString();
-            hero_name_label.Text = hero.fraction_name.ToString();
-            hero_image.BackgroundImage = Image.FromFile(hero.fraction_image);
-            hero_scatter_label.Text = hero.fraction_scatter.ToString() + "%";
+            var hero = GlobalVariables.hero_property[hero_fraction];
+            hero_hp = hero.hp;
+            hero_physical_dmg = hero.phDmg;
+            hero_magic_dmg = hero.magicDmg;
+            hero_hp_result_label.Text = hero_hp.ToString();
+            hero_ph_dmg_result_label.Text = hero_physical_dmg.ToString();
+            hero_magic_dmg_result_label.Text = hero_magic_dmg.ToString();
+            hero_name_label.Text = hero.name.ToString();
+            hero_image.BackgroundImage = Image.FromFile(hero.image);
+            hero_scatter_label.Text = hero.scatter.ToString() + "%";
             /////////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@ namespace Magic_battle
             enemy_magic_dmg_result_label.Text = enemy.fraction_Magic_Dmg.ToString();
             enemy_name_label.Text = enemy.fraction_name.ToString();
             enemy_image.BackgroundImage = Image.FromFile(enemy.fraction_image);
-            hero_scatter_label.Text = hero.fraction_scatter.ToString() + "%";
+            hero_scatter_label.Text = enemy.fraction_scatter.ToString() + "%";
             ////////////////////////////////////////////////////////////////////////
 
 

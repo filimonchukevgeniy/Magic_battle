@@ -92,5 +92,12 @@ namespace Magic_battle
 
             GlobalVariables.hero_fraction_global = hero_fraction;
         }
+
+        private void research_button_Click(object sender, EventArgs e)
+        {
+            ResearchForm researchform = new ResearchForm();
+            researchform.Show();
+            this.Hide();
+        }
     }
 }
