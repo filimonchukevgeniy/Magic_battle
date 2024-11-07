@@ -31,6 +31,8 @@ namespace Magic_battle
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LVL_1));
             this.Hero = new System.Windows.Forms.Panel();
+            this.hero_scatter_label = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.hero_magic_dmg_result_label = new System.Windows.Forms.Label();
             this.hero_ph_dmg_result_label = new System.Windows.Forms.Label();
             this.hero_hp_result_label = new System.Windows.Forms.Label();
@@ -52,6 +54,8 @@ namespace Magic_battle
             this.label6 = new System.Windows.Forms.Label();
             this.enemy_name_label = new System.Windows.Forms.Label();
             this.enemy_image = new System.Windows.Forms.PictureBox();
+            this.enemy_scatter_label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Hero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hero_image)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,6 +64,8 @@ namespace Magic_battle
             // 
             // Hero
             // 
+            this.Hero.Controls.Add(this.hero_scatter_label);
+            this.Hero.Controls.Add(this.label2);
             this.Hero.Controls.Add(this.hero_magic_dmg_result_label);
             this.Hero.Controls.Add(this.hero_ph_dmg_result_label);
             this.Hero.Controls.Add(this.hero_hp_result_label);
@@ -73,8 +79,28 @@ namespace Magic_battle
             this.Hero.Location = new System.Drawing.Point(40, 28);
             this.Hero.Margin = new System.Windows.Forms.Padding(4);
             this.Hero.Name = "Hero";
-            this.Hero.Size = new System.Drawing.Size(332, 479);
+            this.Hero.Size = new System.Drawing.Size(332, 548);
             this.Hero.TabIndex = 0;
+            // 
+            // hero_scatter_label
+            // 
+            this.hero_scatter_label.AutoSize = true;
+            this.hero_scatter_label.Location = new System.Drawing.Point(138, 385);
+            this.hero_scatter_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.hero_scatter_label.Name = "hero_scatter_label";
+            this.hero_scatter_label.Size = new System.Drawing.Size(21, 16);
+            this.hero_scatter_label.TabIndex = 12;
+            this.hero_scatter_label.Text = "10";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 385);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Розкид урону";
             // 
             // hero_magic_dmg_result_label
             // 
@@ -108,7 +134,7 @@ namespace Magic_battle
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(216, 399);
+            this.button2.Location = new System.Drawing.Point(216, 469);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 65);
@@ -119,7 +145,7 @@ namespace Magic_battle
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 399);
+            this.button1.Location = new System.Drawing.Point(17, 469);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 65);
@@ -181,7 +207,9 @@ namespace Magic_battle
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.enemy_scatter_label);
             this.panel1.Controls.Add(this.enemy_magic_dmg_result_label);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.enemy_ph_dmg_result_label);
             this.panel1.Controls.Add(this.enemy_hp_label);
             this.panel1.Controls.Add(this.button3);
@@ -191,10 +219,10 @@ namespace Magic_battle
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.enemy_name_label);
             this.panel1.Controls.Add(this.enemy_image);
-            this.panel1.Location = new System.Drawing.Point(692, 28);
+            this.panel1.Location = new System.Drawing.Point(804, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 479);
+            this.panel1.Size = new System.Drawing.Size(332, 548);
             this.panel1.TabIndex = 11;
             // 
             // enemy_magic_dmg_result_label
@@ -229,7 +257,7 @@ namespace Magic_battle
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(216, 399);
+            this.button3.Location = new System.Drawing.Point(216, 469);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 65);
@@ -239,7 +267,7 @@ namespace Magic_battle
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(17, 399);
+            this.button4.Location = new System.Drawing.Point(17, 469);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 65);
@@ -298,11 +326,31 @@ namespace Magic_battle
             this.enemy_image.TabIndex = 1;
             this.enemy_image.TabStop = false;
             // 
+            // enemy_scatter_label
+            // 
+            this.enemy_scatter_label.AutoSize = true;
+            this.enemy_scatter_label.Location = new System.Drawing.Point(136, 385);
+            this.enemy_scatter_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.enemy_scatter_label.Name = "enemy_scatter_label";
+            this.enemy_scatter_label.Size = new System.Drawing.Size(21, 16);
+            this.enemy_scatter_label.TabIndex = 14;
+            this.enemy_scatter_label.Text = "10";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 385);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Розкид урону";
+            // 
             // LVL_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1182, 653);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Hero);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -343,5 +391,9 @@ namespace Magic_battle
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label enemy_name_label;
         private System.Windows.Forms.PictureBox enemy_image;
+        private System.Windows.Forms.Label hero_scatter_label;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label enemy_scatter_label;
+        private System.Windows.Forms.Label label3;
     }
 }

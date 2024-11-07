@@ -14,10 +14,10 @@ namespace Magic_battle
 
         public static List<characteristics_fraction> property = new List<characteristics_fraction>
     {
-        new characteristics_fraction(100, 20, 30, "Вогняний маг", @"assets\fire_magic.png"),
-        new characteristics_fraction(120, 25, 15, "Водний чарівник", @"assets\water_magic.png"),
-        new characteristics_fraction(90, 20, 30, "Повітряний маг", @"assets\air_magic.jpg"),
-        new characteristics_fraction(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg"),
+        new characteristics_fraction(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20),
+        new characteristics_fraction(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5),
+        new characteristics_fraction(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30),
+        new characteristics_fraction(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5),
         // додавай інших героїв із потрібними параметрами
     };
     }
