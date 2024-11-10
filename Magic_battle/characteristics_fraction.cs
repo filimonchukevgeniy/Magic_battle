@@ -27,4 +27,21 @@ namespace Magic_battle
             fraction_scatter = fraction_Scatter;
         }
     }
+
+    internal class image_for_battle
+    {
+        public string im1 { get; set; }
+        public string im2 { get; set; }
+        public string im3 { get; set; }
+
+        
+
+        public image_for_battle(string Im1, string Im2, string Im3)
+        {
+            im1 = Im1;
+            im2 = Im2;
+            im3 = Im3;
+            
+        }
+    }
 }

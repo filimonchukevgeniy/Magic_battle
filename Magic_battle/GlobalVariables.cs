@@ -9,6 +9,9 @@ namespace Magic_battle
     internal class GlobalVariables
     {
         public static int hero_fraction_global = 0;
+        public static int hero_HP_poin = 0;
+        public static int hero_Ph_poin = 0;
+        public static int hero_Mg_poin = 0;
 
 
 
@@ -38,5 +41,14 @@ namespace Magic_battle
         new Researches(0,0,0,0,0,0),
         // додавай інших героїв із потрібними параметрами
     };
+        public static List<image_for_battle> Image_for_battle = new List<image_for_battle>
+    {
+        
+        new image_for_battle(@"assets\Sword_0.png",@"assets\Sword_1.png",@"assets\Sword_2.png"),
+        new image_for_battle(@"assets\fire_magic.png",@"assets\water_magic.png",@"assets\earth_magic.jpg")
+        // додавай інших героїв із потрібними параметрами
+    };
+
+
     }
 }

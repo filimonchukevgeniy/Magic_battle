@@ -29,14 +29,23 @@ namespace Magic_battle
         double scatter = 0;
         int random_scatter;
 
+        private Timer timer;
+        private string imageIndex = "im1";
+        private int cycleCount = 0;
+
+        int dmg_indicator = 0;
+
+
         int value = GlobalVariables.hero_fraction_global; // Отримати значення
 
         public LVL_1()
         {
             InitializeComponent();
-            
 
 
+            timer = new Timer();
+            timer.Interval = 20; // Інтервал 500 мс
+            timer.Tick += Timer_Tick;  
 
         }
         
@@ -84,6 +93,11 @@ namespace Magic_battle
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            cycleCount = 0;  // Обнуляємо лічильник циклів
+            imageIndex = "im1";  // Починаємо з першого зображення
+            timer.Start();   // Запускаємо таймер
+
             /////////////////////////////////////////////////////////////
             random_scatter = GenerateRandomScatterPH_hero();
             enemy_hp = enemy_hp - hero_physical_dmg - random_scatter;       // фізичний урон по ворогу
@@ -110,10 +124,14 @@ namespace Magic_battle
                 this.Hide();
             }
             //////////////////////////////////////////////////////////////
+            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+
             random_scatter = GenerateRandomScatterPH_hero();
 
             enemy_hp = enemy_hp - hero_magic_dmg - random_scatter;
@@ -135,6 +153,15 @@ namespace Magic_battle
                 this.Hide();
             }
         }
+
+        private void battle_reload(object sender, EventArgs e)
+        {
+            if(dmg_indicator == 1)
+            {
+
+            }
+        }
+
         private int GenerateRandomFraction()
         {
             return _random.Next(0, 3); // Генерує число фракції ворога
@@ -178,6 +205,47 @@ namespace Magic_battle
             double scatter = (hero.fraction_scatter * hero.fraction_Magic_Dmg) / 100;
             int a = (int)Math.Round(scatter);
             return _random_scatter.Next(-a, a); // Генерує число розбросу урона
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+
+            Console.WriteLine("Timer ticked!");
+            if (imageIndex == "im1")
+            {
+                pictureBox1.Visible = true;
+                imageIndex = "im2";
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.Image = Image.FromFile(GlobalVariables.Image_for_battle[0].im1); // Змінюємо зображення
+            }
+            else if (imageIndex == "im2")
+            {
+                imageIndex = "im3";
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.Image = Image.FromFile(GlobalVariables.Image_for_battle[0].im2); // Змінюємо зображення
+            }
+            else if (imageIndex == "im3")
+            {
+                imageIndex = "im4";
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.Image = Image.FromFile(GlobalVariables.Image_for_battle[0].im3); // Змінюємо зображення
+            }
+            else if (imageIndex == "im4") // Кожен раз, коли зображення обійшло цикл
+            {
+                cycleCount++;
+                if (cycleCount >= 3) // Якщо цикл пройдено тричі
+                {
+                    timer.Stop(); // Зупиняємо таймер
+                    pictureBox1.Visible = false;
+                }
+            }
+            else
+            {
+                imageIndex = "im1";
+            }
+
+
+
         }
     }
 }
