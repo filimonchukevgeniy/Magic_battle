@@ -58,6 +58,7 @@ namespace Magic_battle
             this.enemy_image = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Name_LVL = new System.Windows.Forms.Label();
             this.Hero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hero_image)).BeginInit();
             this.panel1.SuspendLayout();
@@ -368,11 +369,23 @@ namespace Magic_battle
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // Name_LVL
+            // 
+            this.Name_LVL.AutoSize = true;
+            this.Name_LVL.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Name_LVL.Location = new System.Drawing.Point(580, 28);
+            this.Name_LVL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Name_LVL.Name = "Name_LVL";
+            this.Name_LVL.Size = new System.Drawing.Size(120, 38);
+            this.Name_LVL.TabIndex = 13;
+            this.Name_LVL.Text = "LVL: 1";
+            // 
             // LVL_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 653);
+            this.Controls.Add(this.Name_LVL);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -390,6 +403,7 @@ namespace Magic_battle
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,5 +437,6 @@ namespace Magic_battle
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label Name_LVL;
     }
 }

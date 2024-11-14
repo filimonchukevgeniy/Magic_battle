@@ -121,14 +121,15 @@ namespace Magic_battle
         private void battle_reload(object sender, EventArgs e)
         {
             int random_chance = 0;
-            
+            var points = GlobalVariables.points;
             var enemy_ch = GlobalVariables.property[GlobalVariables.enemy_generat_number];
-            Console.WriteLine("enemy"+ GlobalVariables.enemy_generat_number);
+            
             if (dmg_indicator == 1)
             {
                 
                 random_scatter = GenerateRandomScatterPH_hero();
-                enemy_hp = enemy_hp - hero_physical_dmg - random_scatter;       // фізичний урон по ворогу
+                GlobalVariables.done_ph_dmg = GlobalVariables.done_ph_dmg + hero_physical_dmg + random_scatter;
+                enemy_hp = enemy_hp - hero_physical_dmg - random_scatter;      // фізичний урон по ворогу
                 enemy_hp_label.Text = enemy_hp.ToString();
 
                 if (enemy_ch.fraction_Ph_Dmg > enemy_ch.fraction_Magic_Dmg)
@@ -138,13 +139,15 @@ namespace Magic_battle
                     if (random_chance <= 6)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;         // фізичний урон по герою
+                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter;        // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }else if(random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
                         hero_hp = hero_hp - enemy_magic_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
@@ -156,13 +159,15 @@ namespace Magic_battle
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
                         hero_hp = hero_hp - enemy_magic_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
                     else if (random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;         // фізичний урон по герою
+                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter;         // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }
@@ -171,12 +176,16 @@ namespace Magic_battle
                               
                 if (hero_hp < 1)
                 {
+                    expirience();
+                    GlobalVariables.experience = 30 * GlobalVariables.k;
                     Defeat form2 = new Defeat();
                     form2.Show();
                     this.Hide();
                 }
                 else if (enemy_hp < 1)                                           // Перевірка Hp гравця і ворога
                 {
+                    expirience();
+                    GlobalVariables.experience = 15 * GlobalVariables.k;
                     Win form2 = new Win();
                     form2.Show();
                     this.Hide();
@@ -184,7 +193,7 @@ namespace Magic_battle
             }else if(dmg_indicator == 2)
             {
                 random_scatter = GenerateRandomScatterPH_hero();
-
+                GlobalVariables.done_mg_dmg = GlobalVariables.done_mg_dmg + hero_magic_dmg + random_scatter;
                 enemy_hp = enemy_hp - hero_magic_dmg - random_scatter;
                 enemy_hp_label.Text = enemy_hp.ToString();
 
@@ -195,7 +204,8 @@ namespace Magic_battle
                     if (random_chance <= 6)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;         // фізичний урон по герою
+                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter;       // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }
@@ -203,6 +213,7 @@ namespace Magic_battle
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
                         hero_hp = hero_hp - enemy_magic_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
@@ -215,13 +226,15 @@ namespace Magic_battle
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
                         hero_hp = hero_hp - enemy_magic_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
                     else if (random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;         // фізичний урон по герою
+                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }
@@ -230,18 +243,43 @@ namespace Magic_battle
 
                 if (hero_hp < 1)
                 {
+                    expirience();
+                    GlobalVariables.experience = 30 * GlobalVariables.k;
                     Defeat form2 = new Defeat();
                     form2.Show();
                     this.Hide();
+
                 }
                 else if (enemy_hp < 1)
                 {
+                    expirience();
+                    GlobalVariables.experience = 15 * GlobalVariables.k;
                     Win form2 = new Win();
                     form2.Show();
                     this.Hide();
                 }
             }
-            Console.WriteLine(random_chance);
+            
+
+            
+        }
+
+        private void expirience()
+        {
+            double hp_point = 0;
+            double ph_point = 0;
+            double magic_point = 0;
+
+            hp_point = GlobalVariables.reseived_dmg / (90 * GlobalVariables.k);
+            GlobalVariables.points[GlobalVariables.hero_fraction_global].hp = GlobalVariables.points[GlobalVariables.hero_fraction_global].hp + (int)Math.Ceiling(hp_point);
+
+            ph_point = GlobalVariables.done_ph_dmg / (65 * GlobalVariables.k);
+            GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg = GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg + (int)Math.Ceiling(ph_point);
+
+            magic_point = GlobalVariables.done_mg_dmg / (65 * GlobalVariables.k);
+            GlobalVariables.points[GlobalVariables.hero_fraction_global].magic = GlobalVariables.points[GlobalVariables.hero_fraction_global].magic + (int)Math.Ceiling(magic_point);
+
+            
         }
 
         private int GenerateRandomFraction()
@@ -297,6 +335,8 @@ namespace Magic_battle
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            button1.Visible = false;
+            button2.Visible = false;
             if(image_type == 1) {
                 if (imageIndex == "im1")
                 {
@@ -412,6 +452,8 @@ namespace Magic_battle
                     timer.Stop(); // Зупиняємо таймер
                     pictureBox1.Visible = false;
                     pictureBox2.Visible = false;
+                    button1.Visible = true;
+                    button2.Visible = true;
                 }
             }
 

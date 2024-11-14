@@ -32,20 +32,26 @@
             this.select_fraction_button = new System.Windows.Forms.Button();
             this.research_button = new System.Windows.Forms.Button();
             this.poin_indicator = new System.Windows.Forms.Button();
-            this.lvl_indicator = new System.Windows.Forms.Button();
+            this.Name_LVL = new System.Windows.Forms.Button();
             this.back_button = new System.Windows.Forms.Button();
             this.HP_buster1_button = new System.Windows.Forms.Button();
             this.HP_buster2_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.armor1 = new System.Windows.Forms.Button();
+            this.avoidance1 = new System.Windows.Forms.Button();
+            this.scater1_up = new System.Windows.Forms.Button();
             this.ph_buster2_button = new System.Windows.Forms.Button();
             this.ph_buster1_button = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.scater1_down = new System.Windows.Forms.Button();
+            this.magic2 = new System.Windows.Forms.Button();
+            this.magic1 = new System.Windows.Forms.Button();
+            this.speacial1 = new System.Windows.Forms.Button();
+            this.speacial1_magic = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.avoidance2 = new System.Windows.Forms.Button();
+            this.armor2 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // select_fraction_button
@@ -58,6 +64,7 @@
             this.select_fraction_button.Size = new System.Drawing.Size(80, 80);
             this.select_fraction_button.TabIndex = 4;
             this.select_fraction_button.UseVisualStyleBackColor = true;
+            this.select_fraction_button.Click += new System.EventHandler(this.select_fraction_button_Click);
             // 
             // research_button
             // 
@@ -83,17 +90,17 @@
             this.poin_indicator.Text = "Points: HP-0 Фізичний-0  Магічний-0";
             this.poin_indicator.UseVisualStyleBackColor = false;
             // 
-            // lvl_indicator
+            // Name_LVL
             // 
-            this.lvl_indicator.BackColor = System.Drawing.Color.Thistle;
-            this.lvl_indicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lvl_indicator.Location = new System.Drawing.Point(909, 16);
-            this.lvl_indicator.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.lvl_indicator.Name = "lvl_indicator";
-            this.lvl_indicator.Size = new System.Drawing.Size(102, 80);
-            this.lvl_indicator.TabIndex = 7;
-            this.lvl_indicator.Text = "LVL : 0 ";
-            this.lvl_indicator.UseVisualStyleBackColor = false;
+            this.Name_LVL.BackColor = System.Drawing.Color.Thistle;
+            this.Name_LVL.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Name_LVL.Location = new System.Drawing.Point(909, 16);
+            this.Name_LVL.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.Name_LVL.Name = "Name_LVL";
+            this.Name_LVL.Size = new System.Drawing.Size(102, 80);
+            this.Name_LVL.TabIndex = 7;
+            this.Name_LVL.Text = "LVL : 0 ";
+            this.Name_LVL.UseVisualStyleBackColor = false;
             // 
             // back_button
             // 
@@ -112,7 +119,7 @@
             // 
             this.HP_buster1_button.BackColor = System.Drawing.Color.Thistle;
             this.HP_buster1_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HP_buster1_button.Location = new System.Drawing.Point(35, 209);
+            this.HP_buster1_button.Location = new System.Drawing.Point(36, 258);
             this.HP_buster1_button.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.HP_buster1_button.Name = "HP_buster1_button";
             this.HP_buster1_button.Size = new System.Drawing.Size(126, 60);
@@ -125,7 +132,7 @@
             // 
             this.HP_buster2_button.BackColor = System.Drawing.Color.Thistle;
             this.HP_buster2_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HP_buster2_button.Location = new System.Drawing.Point(197, 135);
+            this.HP_buster2_button.Location = new System.Drawing.Point(198, 184);
             this.HP_buster2_button.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.HP_buster2_button.Name = "HP_buster2_button";
             this.HP_buster2_button.Size = new System.Drawing.Size(100, 60);
@@ -134,65 +141,65 @@
             this.HP_buster2_button.UseVisualStyleBackColor = false;
             this.HP_buster2_button.Click += new System.EventHandler(this.HP_buster2_button_Click);
             // 
-            // button1
+            // armor1
             // 
-            this.button1.BackColor = System.Drawing.Color.Thistle;
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(197, 209);
-            this.button1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 60);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "armor(1)";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.armor1.BackColor = System.Drawing.Color.Thistle;
+            this.armor1.Enabled = false;
+            this.armor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.armor1.Location = new System.Drawing.Point(198, 258);
+            this.armor1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.armor1.Name = "armor1";
+            this.armor1.Size = new System.Drawing.Size(100, 60);
+            this.armor1.TabIndex = 11;
+            this.armor1.Text = "armor(1)";
+            this.armor1.UseVisualStyleBackColor = false;
+            
             // 
-            // button2
+            // avoidance1
             // 
-            this.button2.BackColor = System.Drawing.Color.Thistle;
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(197, 283);
-            this.button2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 60);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Ухилення від ударів(1)";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.avoidance1.BackColor = System.Drawing.Color.Thistle;
+            this.avoidance1.Enabled = false;
+            this.avoidance1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.avoidance1.Location = new System.Drawing.Point(198, 332);
+            this.avoidance1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.avoidance1.Name = "avoidance1";
+            this.avoidance1.Size = new System.Drawing.Size(149, 60);
+            this.avoidance1.TabIndex = 12;
+            this.avoidance1.Text = "Ухилення від ударів(1)";
+            this.avoidance1.UseVisualStyleBackColor = false;
+            
             // 
-            // button3
+            // scater1_up
             // 
-            this.button3.BackColor = System.Drawing.Color.Thistle;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(197, 445);
-            this.button3.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 60);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "+ Розкид урону(1)";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.scater1_up.BackColor = System.Drawing.Color.Thistle;
+            this.scater1_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scater1_up.Location = new System.Drawing.Point(198, 494);
+            this.scater1_up.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.scater1_up.Name = "scater1_up";
+            this.scater1_up.Size = new System.Drawing.Size(146, 60);
+            this.scater1_up.TabIndex = 15;
+            this.scater1_up.Text = "+ Розкид урону(1)";
+            this.scater1_up.UseVisualStyleBackColor = false;
+            
             // 
             // ph_buster2_button
             // 
             this.ph_buster2_button.BackColor = System.Drawing.Color.Thistle;
             this.ph_buster2_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ph_buster2_button.Location = new System.Drawing.Point(197, 371);
+            this.ph_buster2_button.Location = new System.Drawing.Point(198, 420);
             this.ph_buster2_button.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.ph_buster2_button.Name = "ph_buster2_button";
             this.ph_buster2_button.Size = new System.Drawing.Size(106, 60);
             this.ph_buster2_button.TabIndex = 14;
             this.ph_buster2_button.Text = "Physical DMG(2)";
             this.ph_buster2_button.UseVisualStyleBackColor = false;
-            this.ph_buster2_button.Click += new System.EventHandler(this.button4_Click);
+            
             // 
             // ph_buster1_button
             // 
             this.ph_buster1_button.BackColor = System.Drawing.Color.Thistle;
             this.ph_buster1_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ph_buster1_button.Location = new System.Drawing.Point(35, 445);
+            this.ph_buster1_button.Location = new System.Drawing.Point(36, 494);
             this.ph_buster1_button.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
             this.ph_buster1_button.Name = "ph_buster1_button";
             this.ph_buster1_button.Size = new System.Drawing.Size(136, 60);
@@ -201,70 +208,141 @@
             this.ph_buster1_button.UseVisualStyleBackColor = false;
             this.ph_buster1_button.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // scater1_down
             // 
-            this.button6.BackColor = System.Drawing.Color.Thistle;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(197, 686);
-            this.button6.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(117, 60);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "- Розкид урону(1)";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.scater1_down.BackColor = System.Drawing.Color.Thistle;
+            this.scater1_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scater1_down.Location = new System.Drawing.Point(198, 735);
+            this.scater1_down.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.scater1_down.Name = "scater1_down";
+            this.scater1_down.Size = new System.Drawing.Size(117, 60);
+            this.scater1_down.TabIndex = 18;
+            this.scater1_down.Text = "- Розкид урону(1)";
+            this.scater1_down.UseVisualStyleBackColor = false;
+            
             // 
-            // button7
+            // magic2
             // 
-            this.button7.BackColor = System.Drawing.Color.Thistle;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(197, 612);
-            this.button7.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 60);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Magic DMG(2)";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.magic2.BackColor = System.Drawing.Color.Thistle;
+            this.magic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.magic2.Location = new System.Drawing.Point(198, 661);
+            this.magic2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.magic2.Name = "magic2";
+            this.magic2.Size = new System.Drawing.Size(117, 60);
+            this.magic2.TabIndex = 17;
+            this.magic2.Text = "Magic DMG(2)";
+            this.magic2.UseVisualStyleBackColor = false;
+            
             // 
-            // button8
+            // magic1
             // 
-            this.button8.BackColor = System.Drawing.Color.Thistle;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(35, 686);
-            this.button8.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(126, 60);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "Magic DMG(1)";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.magic1.BackColor = System.Drawing.Color.Thistle;
+            this.magic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.magic1.Location = new System.Drawing.Point(36, 735);
+            this.magic1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.magic1.Name = "magic1";
+            this.magic1.Size = new System.Drawing.Size(126, 60);
+            this.magic1.TabIndex = 16;
+            this.magic1.Text = "Magic DMG(1)";
+            this.magic1.UseVisualStyleBackColor = false;
+            
             // 
-            // button9
+            // speacial1
             // 
-            this.button9.BackColor = System.Drawing.Color.Thistle;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(197, 519);
-            this.button9.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(158, 60);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Особливість фракції(1)";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.speacial1.BackColor = System.Drawing.Color.Thistle;
+            this.speacial1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.speacial1.Location = new System.Drawing.Point(198, 568);
+            this.speacial1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.speacial1.Name = "speacial1";
+            this.speacial1.Size = new System.Drawing.Size(158, 60);
+            this.speacial1.TabIndex = 19;
+            this.speacial1.Text = "Особливість фракції(1)";
+            this.speacial1.UseVisualStyleBackColor = false;
+            
             // 
-            // button10
+            // speacial1_magic
             // 
-            this.button10.BackColor = System.Drawing.Color.Thistle;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(197, 760);
-            this.button10.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(158, 60);
-            this.button10.TabIndex = 20;
-            this.button10.Text = "Особливість фракції(1)";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.speacial1_magic.BackColor = System.Drawing.Color.Thistle;
+            this.speacial1_magic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.speacial1_magic.Location = new System.Drawing.Point(198, 809);
+            this.speacial1_magic.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.speacial1_magic.Name = "speacial1_magic";
+            this.speacial1_magic.Size = new System.Drawing.Size(158, 60);
+            this.speacial1_magic.TabIndex = 20;
+            this.speacial1_magic.Text = "Особливість фракції(1)";
+            this.speacial1_magic.UseVisualStyleBackColor = false;
+            
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Thistle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(65, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "1 point";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Thistle;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(221, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "2 points";
+            // 
+            // avoidance2
+            // 
+            this.avoidance2.BackColor = System.Drawing.Color.Thistle;
+            this.avoidance2.Enabled = false;
+            this.avoidance2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.avoidance2.Location = new System.Drawing.Point(392, 332);
+            this.avoidance2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.avoidance2.Name = "avoidance2";
+            this.avoidance2.Size = new System.Drawing.Size(149, 60);
+            this.avoidance2.TabIndex = 25;
+            this.avoidance2.Text = "Ухилення від ударів(2)";
+            this.avoidance2.UseVisualStyleBackColor = false;
+            // 
+            // armor2
+            // 
+            this.armor2.BackColor = System.Drawing.Color.Thistle;
+            this.armor2.Enabled = false;
+            this.armor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.armor2.Location = new System.Drawing.Point(392, 258);
+            this.armor2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.armor2.Name = "armor2";
+            this.armor2.Size = new System.Drawing.Size(100, 60);
+            this.armor2.TabIndex = 24;
+            this.armor2.Text = "armor(2)";
+            this.armor2.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Thistle;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button11.Location = new System.Drawing.Point(392, 184);
+            this.button11.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(100, 60);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "HP(3)";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Thistle;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(403, 115);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "4 points";
             // 
             // ResearchForm
             // 
@@ -273,20 +351,26 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 1053);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.avoidance2);
+            this.Controls.Add(this.armor2);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.speacial1_magic);
+            this.Controls.Add(this.speacial1);
+            this.Controls.Add(this.scater1_down);
+            this.Controls.Add(this.magic2);
+            this.Controls.Add(this.magic1);
+            this.Controls.Add(this.scater1_up);
             this.Controls.Add(this.ph_buster2_button);
             this.Controls.Add(this.ph_buster1_button);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.avoidance1);
+            this.Controls.Add(this.armor1);
             this.Controls.Add(this.HP_buster2_button);
             this.Controls.Add(this.HP_buster1_button);
             this.Controls.Add(this.back_button);
-            this.Controls.Add(this.lvl_indicator);
+            this.Controls.Add(this.Name_LVL);
             this.Controls.Add(this.poin_indicator);
             this.Controls.Add(this.research_button);
             this.Controls.Add(this.select_fraction_button);
@@ -297,6 +381,7 @@
             this.Text = "ResearchForm";
             this.Load += new System.EventHandler(this.ResearchForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,19 +390,25 @@
         private System.Windows.Forms.Button select_fraction_button;
         private System.Windows.Forms.Button research_button;
         private System.Windows.Forms.Button poin_indicator;
-        private System.Windows.Forms.Button lvl_indicator;
+        private System.Windows.Forms.Button Name_LVL;
         private System.Windows.Forms.Button back_button;
         private System.Windows.Forms.Button HP_buster1_button;
         private System.Windows.Forms.Button HP_buster2_button;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button armor1;
+        private System.Windows.Forms.Button avoidance1;
+        private System.Windows.Forms.Button scater1_up;
         private System.Windows.Forms.Button ph_buster2_button;
         private System.Windows.Forms.Button ph_buster1_button;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button scater1_down;
+        private System.Windows.Forms.Button magic2;
+        private System.Windows.Forms.Button magic1;
+        private System.Windows.Forms.Button speacial1;
+        private System.Windows.Forms.Button speacial1_magic;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button avoidance2;
+        private System.Windows.Forms.Button armor2;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label label3;
     }
 }

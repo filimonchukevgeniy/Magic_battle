@@ -44,4 +44,21 @@ namespace Magic_battle
             
         }
     }
+
+    internal class points
+    {
+        public int hp { get; set; }
+        public int dmg { get; set; }
+        public int magic { get; set; }
+
+
+
+        public points(int HP, int DMG, int Magic)
+        {
+            hp = HP;
+            dmg = DMG;
+            magic = Magic;
+
+        }
+    }
 }
