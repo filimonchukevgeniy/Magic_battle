@@ -279,7 +279,9 @@ namespace Magic_battle
             magic_point = GlobalVariables.done_mg_dmg / (65 * GlobalVariables.k);
             GlobalVariables.points[GlobalVariables.hero_fraction_global].magic = GlobalVariables.points[GlobalVariables.hero_fraction_global].magic + (int)Math.Ceiling(magic_point);
 
-            
+            GlobalVariables.reseived_dmg = 0;
+            GlobalVariables.done_ph_dmg = 0;
+            GlobalVariables.done_mg_dmg = 0;
         }
 
         private int GenerateRandomFraction()

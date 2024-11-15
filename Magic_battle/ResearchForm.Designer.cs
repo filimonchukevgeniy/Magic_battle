@@ -52,6 +52,8 @@
             this.armor2 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.Magic3 = new System.Windows.Forms.Button();
+            this.Ph3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // select_fraction_button
@@ -153,7 +155,6 @@
             this.armor1.TabIndex = 11;
             this.armor1.Text = "armor(1)";
             this.armor1.UseVisualStyleBackColor = false;
-            
             // 
             // avoidance1
             // 
@@ -167,11 +168,11 @@
             this.avoidance1.TabIndex = 12;
             this.avoidance1.Text = "Ухилення від ударів(1)";
             this.avoidance1.UseVisualStyleBackColor = false;
-            
             // 
             // scater1_up
             // 
             this.scater1_up.BackColor = System.Drawing.Color.Thistle;
+            this.scater1_up.Enabled = false;
             this.scater1_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scater1_up.Location = new System.Drawing.Point(198, 494);
             this.scater1_up.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -180,7 +181,6 @@
             this.scater1_up.TabIndex = 15;
             this.scater1_up.Text = "+ Розкид урону(1)";
             this.scater1_up.UseVisualStyleBackColor = false;
-            
             // 
             // ph_buster2_button
             // 
@@ -193,7 +193,7 @@
             this.ph_buster2_button.TabIndex = 14;
             this.ph_buster2_button.Text = "Physical DMG(2)";
             this.ph_buster2_button.UseVisualStyleBackColor = false;
-            
+            this.ph_buster2_button.Click += new System.EventHandler(this.ph_buster2_button_Click);
             // 
             // ph_buster1_button
             // 
@@ -211,6 +211,7 @@
             // scater1_down
             // 
             this.scater1_down.BackColor = System.Drawing.Color.Thistle;
+            this.scater1_down.Enabled = false;
             this.scater1_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scater1_down.Location = new System.Drawing.Point(198, 735);
             this.scater1_down.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -219,7 +220,6 @@
             this.scater1_down.TabIndex = 18;
             this.scater1_down.Text = "- Розкид урону(1)";
             this.scater1_down.UseVisualStyleBackColor = false;
-            
             // 
             // magic2
             // 
@@ -232,7 +232,7 @@
             this.magic2.TabIndex = 17;
             this.magic2.Text = "Magic DMG(2)";
             this.magic2.UseVisualStyleBackColor = false;
-            
+            this.magic2.Click += new System.EventHandler(this.magic2_Click);
             // 
             // magic1
             // 
@@ -245,11 +245,12 @@
             this.magic1.TabIndex = 16;
             this.magic1.Text = "Magic DMG(1)";
             this.magic1.UseVisualStyleBackColor = false;
-            
+            this.magic1.Click += new System.EventHandler(this.magic1_Click);
             // 
             // speacial1
             // 
             this.speacial1.BackColor = System.Drawing.Color.Thistle;
+            this.speacial1.Enabled = false;
             this.speacial1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.speacial1.Location = new System.Drawing.Point(198, 568);
             this.speacial1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -258,11 +259,11 @@
             this.speacial1.TabIndex = 19;
             this.speacial1.Text = "Особливість фракції(1)";
             this.speacial1.UseVisualStyleBackColor = false;
-            
             // 
             // speacial1_magic
             // 
             this.speacial1_magic.BackColor = System.Drawing.Color.Thistle;
+            this.speacial1_magic.Enabled = false;
             this.speacial1_magic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.speacial1_magic.Location = new System.Drawing.Point(198, 809);
             this.speacial1_magic.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -271,7 +272,6 @@
             this.speacial1_magic.TabIndex = 20;
             this.speacial1_magic.Text = "Особливість фракції(1)";
             this.speacial1_magic.UseVisualStyleBackColor = false;
-            
             // 
             // label1
             // 
@@ -332,6 +332,7 @@
             this.button11.TabIndex = 23;
             this.button11.Text = "HP(3)";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label3
             // 
@@ -344,6 +345,32 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "4 points";
             // 
+            // Magic3
+            // 
+            this.Magic3.BackColor = System.Drawing.Color.Thistle;
+            this.Magic3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Magic3.Location = new System.Drawing.Point(392, 661);
+            this.Magic3.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.Magic3.Name = "Magic3";
+            this.Magic3.Size = new System.Drawing.Size(117, 60);
+            this.Magic3.TabIndex = 28;
+            this.Magic3.Text = "Magic DMG(2)";
+            this.Magic3.UseVisualStyleBackColor = false;
+            this.Magic3.Click += new System.EventHandler(this.Magic3_Click);
+            // 
+            // Ph3
+            // 
+            this.Ph3.BackColor = System.Drawing.Color.Thistle;
+            this.Ph3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Ph3.Location = new System.Drawing.Point(392, 420);
+            this.Ph3.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.Ph3.Name = "Ph3";
+            this.Ph3.Size = new System.Drawing.Size(106, 60);
+            this.Ph3.TabIndex = 27;
+            this.Ph3.Text = "Physical DMG(2)";
+            this.Ph3.UseVisualStyleBackColor = false;
+            this.Ph3.Click += new System.EventHandler(this.Ph3_Click);
+            // 
             // ResearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,6 +378,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 1053);
+            this.Controls.Add(this.Magic3);
+            this.Controls.Add(this.Ph3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.avoidance2);
             this.Controls.Add(this.armor2);
@@ -410,5 +439,7 @@
         private System.Windows.Forms.Button armor2;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Magic3;
+        private System.Windows.Forms.Button Ph3;
     }
 }
