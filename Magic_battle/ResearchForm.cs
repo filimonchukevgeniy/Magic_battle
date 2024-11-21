@@ -71,24 +71,25 @@ namespace Magic_battle
             int hero_fraction = GlobalVariables.hero_fraction_global;
 
 
-            if (hero_fraction == 0)
+            if (GlobalVariables.hero_fraction_global == 0)
             {
-                hero_fraction = 1;
+                GlobalVariables.hero_fraction_global = 1;
+
                 select_fraction_button.BackgroundImage = Image.FromFile(@"assets\water_element.png");
             }
-            else if (hero_fraction == 1)
+            else if (GlobalVariables.hero_fraction_global == 1)
             {
-                hero_fraction = 2;
+                GlobalVariables.hero_fraction_global = 2;
                 select_fraction_button.BackgroundImage = Image.FromFile(@"assets\air_element.png");
             }
-            else if (hero_fraction == 2)
+            else if (GlobalVariables.hero_fraction_global == 2)
             {
-                hero_fraction = 3;
+                GlobalVariables.hero_fraction_global = 3;
                 select_fraction_button.BackgroundImage = Image.FromFile(@"assets\earth_element.png");
             }
-            else if (hero_fraction == 3)
+            else if (GlobalVariables.hero_fraction_global == 3)
             {
-                hero_fraction = 0;
+                GlobalVariables.hero_fraction_global = 0;
                 select_fraction_button.BackgroundImage = Image.FromFile(@"assets\fire_element.png");
             }
         }
