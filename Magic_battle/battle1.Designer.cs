@@ -59,6 +59,14 @@ namespace Magic_battle
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Name_LVL = new System.Windows.Forms.Label();
+            this.armor_label_hero = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.avoidance_label_hero = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.avoidance_label_enemy = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.armor_label_enemy = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.Hero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hero_image)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,6 +77,10 @@ namespace Magic_battle
             // 
             // Hero
             // 
+            this.Hero.Controls.Add(this.avoidance_label_hero);
+            this.Hero.Controls.Add(this.label8);
+            this.Hero.Controls.Add(this.armor_label_hero);
+            this.Hero.Controls.Add(this.label7);
             this.Hero.Controls.Add(this.hero_scatter_label);
             this.Hero.Controls.Add(this.label2);
             this.Hero.Controls.Add(this.hero_magic_dmg_result_label);
@@ -212,8 +224,12 @@ namespace Magic_battle
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.avoidance_label_enemy);
             this.panel1.Controls.Add(this.enemy_scatter_label);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.armor_label_enemy);
             this.panel1.Controls.Add(this.enemy_magic_dmg_result_label);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.enemy_ph_dmg_result_label);
             this.panel1.Controls.Add(this.enemy_hp_label);
@@ -353,7 +369,7 @@ namespace Magic_battle
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(379, 83);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 200);
@@ -379,6 +395,86 @@ namespace Magic_battle
             this.Name_LVL.Size = new System.Drawing.Size(120, 38);
             this.Name_LVL.TabIndex = 13;
             this.Name_LVL.Text = "LVL: 1";
+            // 
+            // armor_label_hero
+            // 
+            this.armor_label_hero.AutoSize = true;
+            this.armor_label_hero.Location = new System.Drawing.Point(138, 411);
+            this.armor_label_hero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.armor_label_hero.Name = "armor_label_hero";
+            this.armor_label_hero.Size = new System.Drawing.Size(21, 16);
+            this.armor_label_hero.TabIndex = 14;
+            this.armor_label_hero.Text = "10";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 411);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Броня";
+            // 
+            // avoidance_label_hero
+            // 
+            this.avoidance_label_hero.AutoSize = true;
+            this.avoidance_label_hero.Location = new System.Drawing.Point(218, 438);
+            this.avoidance_label_hero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.avoidance_label_hero.Name = "avoidance_label_hero";
+            this.avoidance_label_hero.Size = new System.Drawing.Size(21, 16);
+            this.avoidance_label_hero.TabIndex = 16;
+            this.avoidance_label_hero.Text = "10";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 438);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(183, 16);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Шанс ухилитисся від удару";
+            // 
+            // avoidance_label_enemy
+            // 
+            this.avoidance_label_enemy.AutoSize = true;
+            this.avoidance_label_enemy.Location = new System.Drawing.Point(216, 438);
+            this.avoidance_label_enemy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.avoidance_label_enemy.Name = "avoidance_label_enemy";
+            this.avoidance_label_enemy.Size = new System.Drawing.Size(21, 16);
+            this.avoidance_label_enemy.TabIndex = 20;
+            this.avoidance_label_enemy.Text = "10";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 438);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(183, 16);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Шанс ухилитисся від удару";
+            // 
+            // armor_label_enemy
+            // 
+            this.armor_label_enemy.AutoSize = true;
+            this.armor_label_enemy.Location = new System.Drawing.Point(136, 411);
+            this.armor_label_enemy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.armor_label_enemy.Name = "armor_label_enemy";
+            this.armor_label_enemy.Size = new System.Drawing.Size(21, 16);
+            this.armor_label_enemy.TabIndex = 18;
+            this.armor_label_enemy.Text = "10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 411);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 16);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Броня";
             // 
             // LVL_1
             // 
@@ -438,5 +534,13 @@ namespace Magic_battle
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label Name_LVL;
+        private System.Windows.Forms.Label avoidance_label_hero;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label armor_label_hero;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label avoidance_label_enemy;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label armor_label_enemy;
+        private System.Windows.Forms.Label label11;
     }
 }

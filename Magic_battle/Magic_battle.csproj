@@ -109,7 +109,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariables.cs" />
-    <Compile Include="hero_characteristics.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

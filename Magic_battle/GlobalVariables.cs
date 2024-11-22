@@ -23,19 +23,19 @@ namespace Magic_battle
 
         public static List<characteristics_fraction> property = new List<characteristics_fraction>
     {
-        new characteristics_fraction(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20),
-        new characteristics_fraction(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5),
-        new characteristics_fraction(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30),
-        new characteristics_fraction(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5),
+        new characteristics_fraction(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 1),
+        new characteristics_fraction(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5, 0, 1),
+        new characteristics_fraction(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
+        new characteristics_fraction(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5 , 5, 1),
         // додавай інших героїв із потрібними параметрами
     };
 
         public static List<hero_characteristics> hero_property = new List<hero_characteristics>
     {
-        new hero_characteristics(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20),
-        new hero_characteristics(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5),
-        new hero_characteristics(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30),
-        new hero_characteristics(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5),
+        new hero_characteristics(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 1),
+        new hero_characteristics(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5, 0, 1),
+        new hero_characteristics(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
+        new hero_characteristics(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5, 5, 1),
         // додавай інших героїв із потрібними параметрами
     };
 
@@ -51,7 +51,8 @@ namespace Magic_battle
     {
         
         new image_for_battle(@"assets\Sword_0.png",@"assets\Sword_1.png",@"assets\Sword_2.png"),
-        new image_for_battle(@"assets\magic_0.png",@"assets\magic_1.png",@"assets\magic_2.png")
+        new image_for_battle(@"assets\magic_0.png",@"assets\magic_1.png",@"assets\magic_2.png"),
+        new image_for_battle(@"assets\miss.png",@"assets\miss.png",@"assets\miss.png")
         // додавай інших героїв із потрібними параметрами
     };
         public static List<points> points = new List<points>

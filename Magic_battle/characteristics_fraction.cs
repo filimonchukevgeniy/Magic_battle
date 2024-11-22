@@ -16,8 +16,11 @@ namespace Magic_battle
         public string fraction_name { get; set; }
         public string fraction_image { get; set; }
         public int fraction_scatter { get; set; }
+        public int fraction_Armor { get; set; }
+        public int fraction_avoidance { get; set; }
 
-        public characteristics_fraction(int fraction_Hp, int fraction_PhDmg, int fraction_MagicDmg, string fraction_Name , string fraction_Image, int fraction_Scatter)
+        public characteristics_fraction(int fraction_Hp, int fraction_PhDmg, int fraction_MagicDmg, string fraction_Name 
+            , string fraction_Image, int fraction_Scatter, int fraction_Armor, int fraction_avoidance)
         {
             fraction_Hp_ = fraction_Hp;
             fraction_Ph_Dmg = fraction_PhDmg;
@@ -25,6 +28,8 @@ namespace Magic_battle
             fraction_name = fraction_Name;
             fraction_image = fraction_Image;
             fraction_scatter = fraction_Scatter;
+            this.fraction_Armor = fraction_Armor;
+            this.fraction_avoidance = fraction_avoidance;
         }
     }
 
@@ -59,6 +64,31 @@ namespace Magic_battle
             dmg = DMG;
             magic = Magic;
 
+        }
+    }
+
+    internal class hero_characteristics
+    {
+        public int hp { get; set; }
+        public int phDmg { get; set; }
+        public int magicDmg { get; set; }
+
+        public string name { get; set; }
+        public string image { get; set; }
+        public int scatter { get; set; }
+        public int armor { get; set; }
+        public int avoidance { get; set; }
+
+        public hero_characteristics(int Hp, int PhDmg, int MagicDmg, string Name, string Image, int Scatter, int armor, int avoidance)
+        {
+            hp = Hp;
+            phDmg = PhDmg;
+            magicDmg = MagicDmg;
+            name = Name;
+            image = Image;
+            scatter = Scatter;
+            this.armor = armor;
+            this.avoidance = avoidance;
         }
     }
 }
