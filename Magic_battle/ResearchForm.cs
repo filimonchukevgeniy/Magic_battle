@@ -49,12 +49,85 @@ namespace Magic_battle
 
         private void ResearchForm_Load(object sender, EventArgs e)
         {
+            var fraction = GlobalVariables.hero_fraction_global;
+            button_reload();
+            poin_indicator_Click(poin_indicator, EventArgs.Empty);
 
+            
+            if (fraction == 1)
+            {
+                select_fraction_button.BackgroundImage = Image.FromFile(@"assets\water_element.png");
+            }
+            else if (fraction == 2)
+            {
+                select_fraction_button.BackgroundImage = Image.FromFile(@"assets\air_element.png");
+            }
+            else if (fraction == 3)
+            {
+                select_fraction_button.BackgroundImage = Image.FromFile(@"assets\earth_element.png");
+            }
+            else if (fraction == 0)
+            {
+                select_fraction_button.BackgroundImage = Image.FromFile(@"assets\fire_element.png");
+            }
+
+
+            var research = GlobalVariables.researches;
+            
+
+            if (research[fraction].hp1_boost >= 1)
+            {
+                HP_buster1_button.Enabled = false;
+                HP_buster1_button.BackColor = Color.LightSteelBlue;
+                if (research[fraction].hp1_boost >= 2)
+                {
+                    HP_buster2_button.Enabled = false;
+                    HP_buster2_button.BackColor = Color.LightSteelBlue;
+                    if (research[fraction].hp1_boost >= 3)
+                    {
+                        button11.Enabled = false;
+                        button11.BackColor = Color.LightSteelBlue;
+                    }
+                    
+                }
+                
+            }
+            
+            if (research[fraction].phDmg1_boost >= 1)
+            {
+                ph_buster1_button.Enabled = false;
+                ph_buster1_button.BackColor = Color.LightSteelBlue;
+                if (research[fraction].phDmg1_boost >= 2)
+                {
+                    ph_buster2_button.Enabled = false;
+                    ph_buster2_button.BackColor = Color.LightSteelBlue;
+                    if (research[fraction].phDmg1_boost >= 3)
+                    {
+                        Ph3.Enabled = false;
+                        Ph3.BackColor = Color.LightSteelBlue;
+                    }
+                }
+            }
+            if (research[fraction].magicDmg1_boost >= 1)
+            {
+                magic1.Enabled = false;
+                magic1.BackColor = Color.LightSteelBlue;
+                if (research[fraction].magicDmg1_boost >= 2)
+                {
+                    magic2.Enabled = false;
+                    magic2.BackColor = Color.LightSteelBlue;
+                    if (research[fraction].magicDmg1_boost >= 3)
+                    {
+                        Magic3.Enabled = false;
+                        Magic3.BackColor = Color.LightSteelBlue;
+                    }
+                }
+            }
         }
 
-        
 
-        
+
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -92,6 +165,7 @@ namespace Magic_battle
                 GlobalVariables.hero_fraction_global = 0;
                 select_fraction_button.BackgroundImage = Image.FromFile(@"assets\fire_element.png");
             }
+            ResearchForm_Load(poin_indicator, EventArgs.Empty);
         }
 
         private void research(Button button)
@@ -247,6 +321,7 @@ namespace Magic_battle
                 }
 
             }
+            ResearchForm_Load(poin_indicator, EventArgs.Empty);
 
 
 
@@ -299,6 +374,46 @@ namespace Magic_battle
             type_point = "hp";
             type_researches = "hp3";
             research(button11);
+        }
+
+        private void poin_indicator_Click(object sender, EventArgs e)
+        {
+            poin_indicator.Text = "Очки: Сили - " + GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg
+                + " Магії - " + GlobalVariables.points[GlobalVariables.hero_fraction_global].magic + " Здоров'я - "
+                + GlobalVariables.points[GlobalVariables.hero_fraction_global].hp;
+        }
+
+        private void button_reload()
+        {
+            HP_buster1_button.Enabled = true;
+            HP_buster1_button.BackColor = Color.Thistle;
+
+            HP_buster2_button.Enabled = true;
+            HP_buster2_button.BackColor = Color.Thistle;
+
+            button11.Enabled = true;
+            button11.BackColor = Color.Thistle;
+
+            ph_buster1_button.Enabled = true;
+            ph_buster1_button.BackColor = Color.Thistle;
+
+            ph_buster2_button.Enabled = true;
+            ph_buster2_button.BackColor = Color.Thistle;
+
+            Ph3.Enabled = true;
+            Ph3.BackColor = Color.Thistle;
+
+            magic1.Enabled = true;
+            magic1.BackColor = Color.Thistle;
+
+            magic2.Enabled = true;
+            magic2.BackColor = Color.Thistle;
+
+            Magic3.Enabled = true;
+            Magic3.BackColor = Color.Thistle;
+
+            
+
         }
     }
 }

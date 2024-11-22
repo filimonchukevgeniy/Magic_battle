@@ -91,6 +91,7 @@
             this.poin_indicator.TabIndex = 6;
             this.poin_indicator.Text = "Points: HP-0 Фізичний-0  Магічний-0";
             this.poin_indicator.UseVisualStyleBackColor = false;
+            this.poin_indicator.Click += new System.EventHandler(this.poin_indicator_Click);
             // 
             // Name_LVL
             // 
@@ -367,7 +368,7 @@
             this.Ph3.Name = "Ph3";
             this.Ph3.Size = new System.Drawing.Size(106, 60);
             this.Ph3.TabIndex = 27;
-            this.Ph3.Text = "Physical DMG(2)";
+            this.Ph3.Text = "Physical DMG(3)";
             this.Ph3.UseVisualStyleBackColor = false;
             this.Ph3.Click += new System.EventHandler(this.Ph3_Click);
             // 

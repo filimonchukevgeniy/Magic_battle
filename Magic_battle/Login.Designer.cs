@@ -36,6 +36,7 @@
             this.password_textBox = new System.Windows.Forms.TextBox();
             this.back_button = new System.Windows.Forms.Button();
             this.text_label = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +71,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 100);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Login";
+            this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -111,6 +112,20 @@
             this.text_label.Text = "label3";
             this.text_label.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(557, 282);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 100);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Download";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -118,6 +133,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 414);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.text_label);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.password_textBox);
@@ -141,5 +157,6 @@
         private System.Windows.Forms.TextBox password_textBox;
         private System.Windows.Forms.Button back_button;
         private System.Windows.Forms.Label text_label;
+        private System.Windows.Forms.Button button1;
     }
 }
