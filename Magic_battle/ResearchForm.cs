@@ -90,7 +90,27 @@ namespace Magic_battle
                     }
                     
                 }
-                
+                if (research[fraction].armor1_boost >= 1)
+                {
+                    armor1.Enabled = false;
+                    armor1.BackColor = Color.LightSteelBlue;
+                    if(research[fraction].armor1_boost >= 2)
+                    {
+                        armor2.Enabled = false;
+                        armor2.BackColor = Color.LightSteelBlue;
+                    }
+                }
+                if (research[fraction].avoidance1_boost >= 1)
+                {
+                    avoidance1.Enabled = false;
+                    avoidance1.BackColor = Color.LightSteelBlue;
+                    if (research[fraction].avoidance1_boost >= 2)
+                    {
+                        avoidance2.Enabled = false;
+                        avoidance2.BackColor = Color.LightSteelBlue;
+                    }
+                }
+
             }
             
             if (research[fraction].phDmg1_boost >= 1)
@@ -107,6 +127,11 @@ namespace Magic_battle
                         Ph3.BackColor = Color.LightSteelBlue;
                     }
                 }
+                if (research[fraction].scatter1_boost >= 1)
+                {
+                    scater1_up.Enabled = false;
+                    scater1_up.BackColor = Color.LightSteelBlue;
+                }
             }
             if (research[fraction].magicDmg1_boost >= 1)
             {
@@ -121,6 +146,11 @@ namespace Magic_battle
                         Magic3.Enabled = false;
                         Magic3.BackColor = Color.LightSteelBlue;
                     }
+                }
+                if (research[fraction].scatter2_boost >= 1)
+                {
+                    scater1_down.Enabled = false;
+                    scater1_down.BackColor = Color.LightSteelBlue;
                 }
             }
         }
@@ -221,10 +251,101 @@ namespace Magic_battle
                     {
                         button.Enabled = false;
                     }
+                }else if(type_researches == "armor1")
+                {
+                    if (points.hp >= prise && researches.hp1_boost >= 0)
+                    {
+                        GlobalVariables.points[fraction].hp = GlobalVariables.points[fraction].hp - prise;
+                        if(GlobalVariables.hero_fraction_global == 3)
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].armor + 10;
+                        }
+                        else
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].armor + 5;
+                        }
+                        
+                        GlobalVariables.researches[fraction].armor1_boost = 1;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
+                }else if(type_researches == "armor2")
+                {
+                    if (points.hp >= prise && researches.armor1_boost == 1)
+                    {
+                        GlobalVariables.points[fraction].hp = GlobalVariables.points[fraction].hp - prise;
+                        if (GlobalVariables.hero_fraction_global == 3)
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].armor + 10;
+                        }
+                        else
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].armor + 5;
+                        }
+
+                        GlobalVariables.researches[fraction].armor1_boost = 2;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
+                }
+                else if (type_researches == "avoidance1")
+                {
+                    if (points.hp >= prise && researches.hp1_boost >= 1)
+                    {
+                        GlobalVariables.points[fraction].hp = GlobalVariables.points[fraction].hp - prise;
+                        if (GlobalVariables.hero_fraction_global == 2)
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].avoidance + 10;
+                        }
+                        else
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].avoidance + 5;
+                        }
+
+                        GlobalVariables.researches[fraction].avoidance1_boost = 1;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
+                }
+                else if (type_researches == "avoidance2")
+                {
+                    if (points.hp >= prise && researches.avoidance1_boost == 1)
+                    {
+                        GlobalVariables.points[fraction].hp = GlobalVariables.points[fraction].hp - prise;
+                        if (GlobalVariables.hero_fraction_global == 2)
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].avoidance + 10;
+                        }
+                        else
+                        {
+                            GlobalVariables.hero_property[fraction].armor = GlobalVariables.hero_property[fraction].avoidance + 5;
+                        }
+
+                        GlobalVariables.researches[fraction].avoidance1_boost = 2;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
                 }
 
 
-            }else if(type_point == "ph")
+            }
+            else if(type_point == "ph")
             {
                 if(type_researches == "ph1")
                 {
@@ -262,6 +383,21 @@ namespace Magic_battle
                         GlobalVariables.points[fraction].dmg = GlobalVariables.points[fraction].dmg - prise;
                         GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 15;
                         GlobalVariables.researches[fraction].phDmg1_boost = 3;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
+                }
+                else if (type_researches == "scatter_up1")
+                {
+                    if (points.dmg >= prise && researches.phDmg1_boost >= 1)
+                    {
+                        GlobalVariables.points[fraction].dmg = GlobalVariables.points[fraction].dmg - prise;
+                        GlobalVariables.hero_property[fraction].scatter = GlobalVariables.hero_property[fraction].scatter + 5;
+                        GlobalVariables.researches[fraction].scatter2_boost = 1;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
                     }
@@ -311,6 +447,21 @@ namespace Magic_battle
                         GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
                         GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 20;
                         GlobalVariables.researches[fraction].magicDmg1_boost = 3;
+                        button.Enabled = false;
+                        button.BackColor = Color.LightSteelBlue;
+                    }
+                    else
+                    {
+                        button.Enabled = false;
+                    }
+                }
+                else if (type_researches == "scatter_down1")
+                {
+                    if (points.dmg >= prise && researches.magicDmg1_boost >= 1)
+                    {
+                        GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
+                        GlobalVariables.hero_property[fraction].scatter = GlobalVariables.hero_property[fraction].scatter + 5;
+                        GlobalVariables.researches[fraction].scatter1_boost = 1;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
                     }
@@ -412,8 +563,74 @@ namespace Magic_battle
             Magic3.Enabled = true;
             Magic3.BackColor = Color.Thistle;
 
-            
+            armor1.Enabled = true;
+            armor1.BackColor = Color.Thistle;
 
+            armor2.Enabled = true;
+            armor2.BackColor = Color.Thistle;
+
+            avoidance1.Enabled = true;
+            avoidance1.BackColor = Color.Thistle;
+
+            avoidance2.Enabled = true;
+            avoidance2.BackColor = Color.Thistle;
+
+            scater1_down.Enabled = true;
+            scater1_down.BackColor = Color.Thistle;
+
+            scater1_up.Enabled = true;
+            scater1_up.BackColor = Color.Thistle;
+
+
+
+        }
+
+        private void armor1_Click(object sender, EventArgs e)
+        {
+            prise = 2;
+            type_point = "hp";
+            type_researches = "armor1";
+            research(armor1);
+        }
+
+        private void armor2_Click(object sender, EventArgs e)
+        {
+            prise = 4;
+            type_point = "hp";
+            type_researches = "armor2";
+            research(armor2);
+        }
+
+        private void avoidance1_Click(object sender, EventArgs e)
+        {
+            prise = 2;
+            type_point = "hp";
+            type_researches = "avoidance1";
+            research(avoidance1);
+        }
+
+        private void avoidance2_Click(object sender, EventArgs e)
+        {
+            prise = 4;
+            type_point = "hp";
+            type_researches = "avoidance2";
+            research(avoidance2);
+        }
+
+        private void scater1_up_Click(object sender, EventArgs e)
+        {
+            prise = 2;
+            type_point = "ph";
+            type_researches = "scatter_up1";
+            research(scater1_up);
+        }
+
+        private void scater1_down_Click(object sender, EventArgs e)
+        {
+            prise = 2;
+            type_point = "ph";
+            type_researches = "scatter_down1";
+            research(scater1_down);
         }
     }
 }

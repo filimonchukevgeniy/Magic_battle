@@ -90,5 +90,31 @@ namespace Magic_battle
             this.armor = armor;
             this.avoidance = avoidance;
         }
+
+    }
+    internal class Researches
+    {
+
+        public int hp1_boost { get; set; }
+        public int phDmg1_boost { get; set; }
+        public int magicDmg1_boost { get; set; }
+
+        public int scatter1_boost { get; set; }
+        public int armor1_boost { get; set; }
+        public int avoidance1_boost { get; set; }
+        public int scatter2_boost { get; set; }
+
+
+        public Researches(int Hp1, int PhDmg1, int MagicDmg1, int scatter1, int armor1, int avoidance, int scatter2_boost)
+        {
+            hp1_boost = Hp1;
+            phDmg1_boost = PhDmg1;
+            magicDmg1_boost = MagicDmg1;
+            scatter1_boost = scatter1;
+            armor1_boost = armor1;
+            avoidance1_boost = avoidance;
+            this.scatter2_boost = scatter2_boost;
+        }
+
     }
 }

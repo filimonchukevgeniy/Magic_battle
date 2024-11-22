@@ -147,7 +147,6 @@
             // armor1
             // 
             this.armor1.BackColor = System.Drawing.Color.Thistle;
-            this.armor1.Enabled = false;
             this.armor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.armor1.Location = new System.Drawing.Point(198, 258);
             this.armor1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -156,11 +155,11 @@
             this.armor1.TabIndex = 11;
             this.armor1.Text = "armor(1)";
             this.armor1.UseVisualStyleBackColor = false;
+            this.armor1.Click += new System.EventHandler(this.armor1_Click);
             // 
             // avoidance1
             // 
             this.avoidance1.BackColor = System.Drawing.Color.Thistle;
-            this.avoidance1.Enabled = false;
             this.avoidance1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.avoidance1.Location = new System.Drawing.Point(198, 332);
             this.avoidance1.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -169,11 +168,11 @@
             this.avoidance1.TabIndex = 12;
             this.avoidance1.Text = "Ухилення від ударів(1)";
             this.avoidance1.UseVisualStyleBackColor = false;
+            this.avoidance1.Click += new System.EventHandler(this.avoidance1_Click);
             // 
             // scater1_up
             // 
             this.scater1_up.BackColor = System.Drawing.Color.Thistle;
-            this.scater1_up.Enabled = false;
             this.scater1_up.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scater1_up.Location = new System.Drawing.Point(198, 494);
             this.scater1_up.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -182,6 +181,7 @@
             this.scater1_up.TabIndex = 15;
             this.scater1_up.Text = "+ Розкид урону(1)";
             this.scater1_up.UseVisualStyleBackColor = false;
+            this.scater1_up.Click += new System.EventHandler(this.scater1_up_Click);
             // 
             // ph_buster2_button
             // 
@@ -212,7 +212,6 @@
             // scater1_down
             // 
             this.scater1_down.BackColor = System.Drawing.Color.Thistle;
-            this.scater1_down.Enabled = false;
             this.scater1_down.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.scater1_down.Location = new System.Drawing.Point(198, 735);
             this.scater1_down.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -221,6 +220,7 @@
             this.scater1_down.TabIndex = 18;
             this.scater1_down.Text = "- Розкид урону(1)";
             this.scater1_down.UseVisualStyleBackColor = false;
+            this.scater1_down.Click += new System.EventHandler(this.scater1_down_Click);
             // 
             // magic2
             // 
@@ -299,7 +299,6 @@
             // avoidance2
             // 
             this.avoidance2.BackColor = System.Drawing.Color.Thistle;
-            this.avoidance2.Enabled = false;
             this.avoidance2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.avoidance2.Location = new System.Drawing.Point(392, 332);
             this.avoidance2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -308,11 +307,11 @@
             this.avoidance2.TabIndex = 25;
             this.avoidance2.Text = "Ухилення від ударів(2)";
             this.avoidance2.UseVisualStyleBackColor = false;
+            this.avoidance2.Click += new System.EventHandler(this.avoidance2_Click);
             // 
             // armor2
             // 
             this.armor2.BackColor = System.Drawing.Color.Thistle;
-            this.armor2.Enabled = false;
             this.armor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.armor2.Location = new System.Drawing.Point(392, 258);
             this.armor2.Margin = new System.Windows.Forms.Padding(9, 7, 9, 7);
@@ -321,6 +320,7 @@
             this.armor2.TabIndex = 24;
             this.armor2.Text = "armor(2)";
             this.armor2.UseVisualStyleBackColor = false;
+            this.armor2.Click += new System.EventHandler(this.armor2_Click);
             // 
             // button11
             // 
