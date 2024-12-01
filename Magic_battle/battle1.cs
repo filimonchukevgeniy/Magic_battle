@@ -358,7 +358,14 @@ namespace Magic_battle
             double magic_point = 0;
 
             hp_point = (int)(GlobalVariables.reseived_dmg / (double)(90 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_points));
-            GlobalVariables.points[GlobalVariables.hero_fraction_global].hp = GlobalVariables.points[GlobalVariables.hero_fraction_global].hp + (int)Math.Ceiling(hp_point);
+
+            if (GlobalVariables.reseived_dmg >= GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].hp && ph_point == 0)
+            {
+                GlobalVariables.points[GlobalVariables.hero_fraction_global].hp++;
+            }else
+            {
+                GlobalVariables.points[GlobalVariables.hero_fraction_global].hp = GlobalVariables.points[GlobalVariables.hero_fraction_global].hp + (int)Math.Ceiling(hp_point);
+            }
 
             ph_point = (int)(GlobalVariables.done_ph_dmg / (double)(65 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_points));
             GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg = GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg + (int)Math.Ceiling(ph_point);
