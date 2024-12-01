@@ -18,24 +18,26 @@ namespace Magic_battle
         public static int done_mg_dmg = 0;
         public static int experience = 0;
         public static int k = 1;
+        public static int LVL_id = 0;
         
 
 
         public static List<characteristics_fraction> property = new List<characteristics_fraction>
     {
-        new characteristics_fraction(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 0),
+        new characteristics_fraction(100, 20, 30, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 0),
         new characteristics_fraction(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5, 0, 0),
-        new characteristics_fraction(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
+        new characteristics_fraction(90, 20, 25, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
         new characteristics_fraction(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5 , 5, 0),
+        new characteristics_fraction(500, 15, 10, "Земляний чарівник", @"assets\earth_elementar.png", 5 , 20, 0),
         // додавай інших героїв із потрібними параметрами
     };
 
         public static List<hero_characteristics> hero_property = new List<hero_characteristics>
     {
-        new hero_characteristics(100, 20, 40, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 0),
+        new hero_characteristics(100, 20, 30, "Вогняний маг", @"assets\fire_magic.png", 20, 0, 0),
         new hero_characteristics(120, 25, 15, "Водний чарівник", @"assets\water_magic.png", 5, 0, 0),
-        new hero_characteristics(90, 20, 35, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
-        new hero_characteristics(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5, 5, 0),
+        new hero_characteristics(90, 20, 25, "Повітряний маг", @"assets\air_magic.jpg", 30, 0, 5),
+        new hero_characteristics(200, 15, 10, "Земляний чарівник", @"assets\earth_magic.jpg", 5, 50, 0),
         // додавай інших героїв із потрібними параметрами
     };
 
@@ -61,6 +63,16 @@ namespace Magic_battle
         new points(0,0,0),
         new points(0,0,0),
         new points(0,0,0)
+    };
+
+        public static List<LVL_property> LVL = new List<LVL_property>
+    {
+        new LVL_property("Новачок 1",20,false, 0 , 1.0, 1.0, 1.0),
+        new LVL_property("Новачок 2",30,false, 0 ,1.1, 1.2, 1.2),
+        new LVL_property("Новачок 3",40,false, 0 ,1.2, 1.4, 1.6),
+        new LVL_property("Новачок 4",60,false, 0 ,1.3, 1.6, 2),
+        new LVL_property("Новачок 5",80,true, 4 ,1.4, 2, 3),
+
     };
 
     }

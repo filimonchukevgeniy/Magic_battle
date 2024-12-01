@@ -127,7 +127,7 @@ namespace Magic_battle
                         Ph3.BackColor = Color.LightSteelBlue;
                     }
                 }
-                if (research[fraction].scatter1_boost >= 1)
+                if (research[fraction].scatter2_boost >= 1)
                 {
                     scater1_up.Enabled = false;
                     scater1_up.BackColor = Color.LightSteelBlue;
@@ -147,7 +147,7 @@ namespace Magic_battle
                         Magic3.BackColor = Color.LightSteelBlue;
                     }
                 }
-                if (research[fraction].scatter2_boost >= 1)
+                if (research[fraction].scatter1_boost >= 1)
                 {
                     scater1_down.Enabled = false;
                     scater1_down.BackColor = Color.LightSteelBlue;
@@ -352,7 +352,7 @@ namespace Magic_battle
                     if (points.dmg >= prise && researches.phDmg1_boost == 0)
                     {
                         GlobalVariables.points[fraction].dmg = GlobalVariables.points[fraction].dmg - prise;
-                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 10;
+                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 5;
                         GlobalVariables.researches[fraction].phDmg1_boost = 1;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -366,7 +366,7 @@ namespace Magic_battle
                     if (points.dmg >= prise && researches.phDmg1_boost == 1)
                     {
                         GlobalVariables.points[fraction].dmg = GlobalVariables.points[fraction].dmg - prise;
-                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 10;
+                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 8;
                         GlobalVariables.researches[fraction].phDmg1_boost = 2;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -381,7 +381,7 @@ namespace Magic_battle
                     if (points.dmg >= prise && researches.phDmg1_boost == 2)
                     {
                         GlobalVariables.points[fraction].dmg = GlobalVariables.points[fraction].dmg - prise;
-                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 15;
+                        GlobalVariables.hero_property[fraction].phDmg = GlobalVariables.hero_property[fraction].phDmg + 10;
                         GlobalVariables.researches[fraction].phDmg1_boost = 3;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -415,7 +415,7 @@ namespace Magic_battle
                     if (points.magic >= prise && researches.magicDmg1_boost == 0)
                     {
                         GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
-                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 10;
+                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 5;
                         GlobalVariables.researches[fraction].magicDmg1_boost = 1;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -430,7 +430,7 @@ namespace Magic_battle
                     if (points.magic >= prise && researches.magicDmg1_boost == 1)
                     {
                         GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
-                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 20;
+                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 8;
                         GlobalVariables.researches[fraction].magicDmg1_boost = 2;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -445,7 +445,7 @@ namespace Magic_battle
                     if (points.magic >= prise && researches.magicDmg1_boost == 2)
                     {
                         GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
-                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 20;
+                        GlobalVariables.hero_property[fraction].magicDmg = GlobalVariables.hero_property[fraction].magicDmg + 10;
                         GlobalVariables.researches[fraction].magicDmg1_boost = 3;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;
@@ -457,10 +457,10 @@ namespace Magic_battle
                 }
                 else if (type_researches == "scatter_down1")
                 {
-                    if (points.dmg >= prise && researches.magicDmg1_boost >= 1)
+                    if (points.magic >= prise && researches.magicDmg1_boost >= 1)
                     {
                         GlobalVariables.points[fraction].magic = GlobalVariables.points[fraction].magic - prise;
-                        GlobalVariables.hero_property[fraction].scatter = GlobalVariables.hero_property[fraction].scatter + 5;
+                        GlobalVariables.hero_property[fraction].scatter = GlobalVariables.hero_property[fraction].scatter - 5;
                         GlobalVariables.researches[fraction].scatter1_boost = 1;
                         button.Enabled = false;
                         button.BackColor = Color.LightSteelBlue;

@@ -57,10 +57,18 @@ namespace Magic_battle
 
         private void battle1_Load(object sender, EventArgs e)
         {
-            GlobalVariables.enemy_generat_number = GenerateRandomFraction();
+            if (GlobalVariables.LVL[GlobalVariables.LVL_id].Boss_indicator == true)
+            {
+                GlobalVariables.enemy_generat_number = GlobalVariables.LVL[GlobalVariables.LVL_id].Boss_id;
+            }
+            else
+            {
+                GlobalVariables.enemy_generat_number = GenerateRandomFraction();
+            }
+            
             enemy_generat_number = GlobalVariables.enemy_generat_number;    
 
-
+            var lvl = GlobalVariables.LVL[GlobalVariables.LVL_id];
             hero_fraction = GlobalVariables.hero_fraction_global;
             ////////////////////////////////////////////////////////////////////
             /// створення головного персонажу і заповнення його статистики
@@ -82,12 +90,12 @@ namespace Magic_battle
             ////////////////////////////////////////////////////////////////////////
             /// створення персонажа ворога і заповнення статів в грі
             var enemy = GlobalVariables.property[GlobalVariables.enemy_generat_number];
-            enemy_hp = enemy.fraction_Hp_;
-            enemy_physical_dmg = enemy.fraction_Ph_Dmg;
-            enemy_magic_dmg = enemy.fraction_Magic_Dmg;
-            enemy_hp_label.Text = enemy.fraction_Hp_.ToString();
-            enemy_ph_dmg_result_label.Text = enemy.fraction_Ph_Dmg.ToString();
-            enemy_magic_dmg_result_label.Text = enemy.fraction_Magic_Dmg.ToString();
+            enemy_hp = (int)Math.Round(enemy.fraction_Hp_*lvl.k_dmg);
+            enemy_physical_dmg = (int)Math.Round(enemy.fraction_Ph_Dmg*lvl.k_dmg);
+            enemy_magic_dmg = (int)Math.Round(enemy.fraction_Magic_Dmg * lvl.k_dmg);
+            enemy_hp_label.Text = enemy_hp.ToString();
+            enemy_ph_dmg_result_label.Text = enemy_physical_dmg.ToString();
+            enemy_magic_dmg_result_label.Text = enemy_magic_dmg.ToString();
             enemy_name_label.Text = enemy.fraction_name.ToString();
             enemy_image.BackgroundImage = Image.FromFile(enemy.fraction_image);
             enemy_scatter_label.Text = enemy.fraction_scatter.ToString() + "%";
@@ -95,7 +103,7 @@ namespace Magic_battle
             avoidance_label_enemy.Text = enemy.fraction_avoidance.ToString() + "%";
             ////////////////////////////////////////////////////////////////////////
 
-
+            Name_LVL.Text = (GlobalVariables.LVL[GlobalVariables.LVL_id].name);
 
 
 
@@ -130,6 +138,8 @@ namespace Magic_battle
             int random_chance = 0;
             var points = GlobalVariables.points;
             var enemy_ch = GlobalVariables.property[GlobalVariables.enemy_generat_number];
+
+            
             avoidance_indicator = GenerateRandomAvoidance();
 
             if (dmg_indicator == 1)
@@ -139,10 +149,12 @@ namespace Magic_battle
                 {
                     image_type = 1;
                     random_scatter = GenerateRandomScatterPH_hero();
-                    float a = (hero_physical_dmg + random_scatter) * ((enemy_ch.fraction_Armor + 1) / 100);
-                    int b = (int)Math.Round(a);
-                    GlobalVariables.done_ph_dmg = GlobalVariables.done_ph_dmg + hero_physical_dmg + random_scatter - b;
-                    enemy_hp = enemy_hp - hero_physical_dmg - random_scatter + b;      // фізичний урон по ворогу
+                    double c = (double)(GlobalVariables.property[GlobalVariables.hero_fraction_global].fraction_Armor / 100);
+                    double a = (double)((hero_physical_dmg + random_scatter) * c);
+                    double xx = (double)(hero_physical_dmg + random_scatter - a);
+                    int b = (int)Math.Round(xx);
+                    GlobalVariables.done_ph_dmg = GlobalVariables.done_ph_dmg + b;
+                    enemy_hp = enemy_hp -  b;      // фізичний урон по ворогу
                     enemy_hp_label.Text = enemy_hp.ToString();
                 }
                 else
@@ -162,19 +174,23 @@ namespace Magic_battle
                     {
 
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        float a = (enemy_physical_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter + b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_physical_dmg + random_scatter) * c );
+                        double xx = (double)(enemy_physical_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b ;
                         GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter - b ;        // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }else if(random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
-                        float a = (enemy_magic_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_magic_dmg - random_scatter + b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter - b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_magic_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_magic_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp -  b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg +  b;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
@@ -185,19 +201,23 @@ namespace Magic_battle
                     if (random_chance <= 6)
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
-                        float a = (enemy_magic_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_magic_dmg - random_scatter + b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter - b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_magic_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_magic_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + b;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
                     else if (random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        float a = (enemy_physical_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter + b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_physical_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_physical_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
                         GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter - b;         // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
@@ -208,7 +228,8 @@ namespace Magic_battle
                 if (hero_hp < 1)
                 {
                     expirience();
-                    GlobalVariables.experience = 30 * GlobalVariables.k;
+                    GlobalVariables.experience = GlobalVariables.experience + (int)(20 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_exp);
+                    new_lvl();
                     Defeat form2 = new Defeat();
                     form2.Show();
                     this.Hide();
@@ -216,7 +237,8 @@ namespace Magic_battle
                 else if (enemy_hp < 1)                                           // Перевірка Hp гравця і ворога
                 {
                     expirience();
-                    GlobalVariables.experience = 15 * GlobalVariables.k;
+                    GlobalVariables.experience = GlobalVariables.experience + (int)(10 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_exp);
+                    new_lvl();
                     Win form2 = new Win();
                     form2.Show();
                     this.Hide();
@@ -226,10 +248,12 @@ namespace Magic_battle
                 if (GlobalVariables.property[enemy_generat_number].fraction_avoidance <= avoidance_indicator)
                 {
                     random_scatter = GenerateRandomScatterPH_hero();
-                    float a = (hero_physical_dmg + random_scatter) * ((enemy_ch.fraction_Armor + 1) / 100);
-                    int b = (int)Math.Round(a);
-                    GlobalVariables.done_mg_dmg = GlobalVariables.done_mg_dmg + hero_magic_dmg + random_scatter - b;
-                    enemy_hp = enemy_hp - hero_magic_dmg - random_scatter + b;
+                    double c = (double)(GlobalVariables.property[GlobalVariables.hero_fraction_global].fraction_Armor / 100);
+                    double a = (double)((hero_magic_dmg + random_scatter) * c);
+                    double xx = (double)(hero_magic_dmg + random_scatter - a);
+                    int b = (int)Math.Round(xx);
+                    GlobalVariables.done_mg_dmg = GlobalVariables.done_mg_dmg + b;
+                    enemy_hp = enemy_hp -  b;
                     enemy_hp_label.Text = enemy_hp.ToString();
                     image_type = 2;
                 }
@@ -249,20 +273,24 @@ namespace Magic_battle
                     if (random_chance <= 6)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        float a = (enemy_physical_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter +b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter - b;       // фізичний урон по герою
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_physical_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_physical_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + b;       // фізичний урон по герою
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }
                     else if (random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
-                        float a = (enemy_magic_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_magic_dmg - random_scatter + b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter - b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_magic_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_magic_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + b;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
@@ -274,20 +302,24 @@ namespace Magic_battle
                     if (random_chance <= 6)
                     {
                         random_scatter = GenerateRandomScatterMagic_enemy();
-                        float a = (enemy_magic_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_magic_dmg - random_scatter +b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_magic_dmg + random_scatter - b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_magic_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_magic_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + b;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 2;
                     }
                     else if (random_chance >= 7)
                     {
                         random_scatter = GenerateRandomScatterPH_enemy();
-                        float a = (enemy_physical_dmg + random_scatter) * ((GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor + 1) / 100);
-                        int b = (int)Math.Round(a);
-                        hero_hp = hero_hp - enemy_physical_dmg - random_scatter + b;
-                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + enemy_physical_dmg + random_scatter - b;
+                        double c = (double)(GlobalVariables.hero_property[GlobalVariables.hero_fraction_global].armor / 100);
+                        double a = (double)((enemy_physical_dmg + random_scatter) * c);
+                        double xx = (double)(enemy_physical_dmg + random_scatter - a);
+                        int b = (int)Math.Round(xx);
+                        hero_hp = hero_hp - b;
+                        GlobalVariables.reseived_dmg = GlobalVariables.reseived_dmg + b;
                         hero_hp_result_label.Text = hero_hp.ToString();
                         image_type2 = 1;
                     }
@@ -297,7 +329,8 @@ namespace Magic_battle
                 if (hero_hp < 1)
                 {
                     expirience();
-                    GlobalVariables.experience = 30 * GlobalVariables.k;
+                    GlobalVariables.experience = GlobalVariables.experience + (int)(20 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_exp);
+                    new_lvl();
                     Defeat form2 = new Defeat();
                     form2.Show();
                     this.Hide();
@@ -306,7 +339,8 @@ namespace Magic_battle
                 else if (enemy_hp < 1)
                 {
                     expirience();
-                    GlobalVariables.experience = 15 * GlobalVariables.k;
+                    GlobalVariables.experience = GlobalVariables.experience + (int)(10 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_exp);
+                    new_lvl();
                     Win form2 = new Win();
                     form2.Show();
                     this.Hide();
@@ -323,18 +357,27 @@ namespace Magic_battle
             double ph_point = 0;
             double magic_point = 0;
 
-            hp_point = GlobalVariables.reseived_dmg / (90 * GlobalVariables.k);
+            hp_point = (int)(GlobalVariables.reseived_dmg / (double)(90 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_points));
             GlobalVariables.points[GlobalVariables.hero_fraction_global].hp = GlobalVariables.points[GlobalVariables.hero_fraction_global].hp + (int)Math.Ceiling(hp_point);
 
-            ph_point = GlobalVariables.done_ph_dmg / (65 * GlobalVariables.k);
+            ph_point = (int)(GlobalVariables.done_ph_dmg / (double)(65 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_points));
             GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg = GlobalVariables.points[GlobalVariables.hero_fraction_global].dmg + (int)Math.Ceiling(ph_point);
 
-            magic_point = GlobalVariables.done_mg_dmg / (65 * GlobalVariables.k);
+            magic_point = (int)(GlobalVariables.done_mg_dmg / (double)(65 * GlobalVariables.LVL[GlobalVariables.LVL_id].k_points));
             GlobalVariables.points[GlobalVariables.hero_fraction_global].magic = GlobalVariables.points[GlobalVariables.hero_fraction_global].magic + (int)Math.Ceiling(magic_point);
 
             GlobalVariables.reseived_dmg = 0;
             GlobalVariables.done_ph_dmg = 0;
             GlobalVariables.done_mg_dmg = 0;
+        }
+
+        private void new_lvl()
+        {
+            if (GlobalVariables.experience >= GlobalVariables.LVL[GlobalVariables.LVL_id].capacity)
+            {
+                GlobalVariables.experience = 0;
+                GlobalVariables.LVL_id++;
+            }
         }
 
         private int GenerateRandomFraction()

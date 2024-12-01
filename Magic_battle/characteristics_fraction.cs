@@ -117,4 +117,32 @@ namespace Magic_battle
         }
 
     }
+
+    internal class LVL_property
+    {
+
+        public string name { get; set; }
+        public int capacity { get; set; }
+        public bool Boss_indicator { get; set; }
+
+        public int Boss_id { get; set; }
+        public double k_dmg { get; set; }
+        public double k_exp { get; set; }
+        public double k_points { get; set; }
+
+
+
+        public LVL_property(string name, int capacity, bool Boss_indicator, int Boss_id, double k_dmg,double k_exp, double k_points)
+        {
+            this.name = name;
+            this.capacity = capacity;
+            this.Boss_indicator = Boss_indicator;
+            this.Boss_id = Boss_id;
+            this.k_dmg = k_dmg;
+            this.k_exp = k_exp;
+            this.k_points = k_points;
+
+        }
+
+    }
 }
